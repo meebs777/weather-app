@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
-  <body>
+  <body class="gradient">
     <div>
       <input type="text" name="" id="location" placeholder="Enter City" />
       <button id="search">Search</button>
@@ -13,13 +13,60 @@
     <div class="card">
       <h3 id="city">City Name</h3>
       <div class="card-main">
-        <img id="main-icon" alt="">
-        <div></div>
+        <img id="main-icon" alt="" />
+        <div id="temp"></div>
       </div>
-      <div class="card-bottom"></div>
+      <div class="card-bottom">
+        <h4 id="conditions"></h4>
+        <div class="tempcontainer">
+          <span id="high"></span>
+          <span id="low"></span>
+        </div>
+      </div>
     </div>
-    <div>
-
+    <div class="forecast">
+      <ul>
+        <li id="forecast-1">
+          <h5></h5>
+          <img class="forecast-img" alt="">
+          <div class="forecast-container">
+            <span class="hi"></span>
+            <span class="lo"></span>
+          </div>
+        </li>
+        <li id="forecast-2">
+          <h5></h5>
+          <img class="forecast-img" alt="">
+          <div class="forecast-container">
+            <span class="hi"></span>
+            <span class="lo"></span>
+          </div>
+        </li>
+        <li id="forecast-3">
+          <h5></h5>
+          <img class="forecast-img" alt="">
+          <div class="forecast-container">
+            <span class="hi"></span>
+            <span class="lo"></span>
+          </div>
+        </li>
+        <li id="forecast-4">
+          <h5></h5>
+          <img class="forecast-img" alt="">
+          <div class="forecast-container">
+            <span class="hi"></span>
+            <span class="lo"></span>
+          </div>
+        </li>
+        <li id="forecast-5">
+          <h5></h5>
+          <img class="forecast-img" alt="">
+          <div class="forecast-container">
+            <span class="hi"></span>
+            <span class="lo"></span>
+          </div>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
