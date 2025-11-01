@@ -1,7 +1,7 @@
 async function getWeatherData(location) {
   try {
       const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}next7days?unitGroup=metric&include=days%2Ccurrent&key=C8A8ZX454796DUF52CDNCX2KK&contentType=json`,
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next7days?unitGroup=metric&include=days%2Ccurrent&key=C8A8ZX454796DUF52CDNCX2KK&contentType=json`,
     );
     const data = await response.json();
     return data;
