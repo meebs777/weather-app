@@ -13,17 +13,19 @@ const low = document.getElementById("low")
 
 async function handleSearch() {
   try {
-    const { conditions, days } = await currentConditions(input.value);
+    const city = input.value || "calgary";
+    const { conditions, days } = await currentConditions(city);
     refreshCard(conditions, days);
     refreshForecast(days);
+    input.value = "";
   } catch (err) {
     console.error("Failed to fetch weather data", err);
   }
 }
 function refreshCard(conditions, days) {
   console.log(conditions, days);
-  locationTitle.textContent =
-    input.value[0].toUpperCase() + input.value.slice(1);
+  input.value ? locationTitle.textContent =
+    input.value[0].toUpperCase() + input.value.slice(1) : locationTitle.textContent = "Calgary";
   import(
     /* webpackInclude: /\.svg$/ */
     `../images/3rd Set - Color/${conditions.icon}.svg`
@@ -52,6 +54,9 @@ function refreshForecast(days) {
     });
     hi.textContent = "H: "+ Math.round(parseFloat(currentDay.tempmax)).toString() + "°C";
     lo.textContent = "L: " + Math.round(parseFloat(currentDay.tempmin)).toString() + "°C";
+    title.textContent = currentDay.datetime.slice(5)
     }
 }
+handleSearch();
 search.addEventListener("click", handleSearch);
+
